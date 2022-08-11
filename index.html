@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>To do list</title>
+</head>
+<body class="bg-info bg-opacity-25">
+   <div class="main pt-5">
+        <div class="container ">
+            <h2 class="text text-center text-success text-opacity-50">Ro'yxat tuzish</h2>
+            <div class="row pt-5">
+                <div class="col-md-6">
+                    <form class="form ">
+                        <div class="d-flex justify-content-between mb-5">
+                            <input class="form-control bg-light form-input w-50" type="text" placeholder="Ro'yxat ma'lumotlaringizni kiriting" aria-label="Ro'yhat malumotlari" autocomplete="off" required>
+                            <button type="submit" class="btn btn-success">Yuborish</button>
+                            <button type="reset" class="btn btn-secondary">Tozalash</button>
+                        </div>
+
+                       <label class="form-check-label text-secondary fs-4" for="checkbox">
+                            <input class="form-check-input form-checkbox" type="checkbox" id="checkbox">
+                            Ma'lumotingizni yuqoridan qo'shsangiz bo'ladi.
+                       </label>
+
+                    </form>
+                </div>
+    
+                <div class="col-md-6">
+                    <ul class="list-group list"></ul>
+                </div>
+
+                <div class="col-12 mt-5 item-text-box">
+                    <p class="text-center text-secondary item-text"></p>
+                </div>
+            </div>
+        </div>
+   </div>
+
+
+   <script src="./js/script.js"></script>
+</body>
+</html>
