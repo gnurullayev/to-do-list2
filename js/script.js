@@ -13,24 +13,28 @@ elForm.addEventListener("submit", function (e) {
     elItem.setAttribute("class", "list-group-item  bg-info bg-opacity-25 d-flex  align-content-center");
 
     let inputValue = elFormInput.value;
-    
-    if(elFormCheckbox.checked) {
-        newArray.unshift(inputValue);
-        elItem.innerHTML = `<label class="form-label mb-0 w-100 ">
-        <input class="form-check-input form-checkbox list-item-check" value= ${inputValue} type="checkbox"> 
-        ${newArray[0]}
-        </label>`;
-        elList.prepend(elItem); 
+
+    if(newArray.includes(inputValue)) {
+        alert("Kechirasiz bu maxsulot ro'yhatda bor")
+    }else {
+        if(elFormCheckbox.checked) {
+            newArray.unshift(inputValue);
+            elItem.innerHTML = `<label class="form-label mb-0 w-100 ">
+            <input class="form-check-input form-checkbox list-item-check" value= ${inputValue} type="checkbox"> 
+            ${newArray[0]}
+            </label>`;
+            elList.prepend(elItem); 
+        }
+        else {
+            newArray.push(inputValue);
+            elItem.innerHTML = `<label class="form-label mb-0 w-100 ">
+            <input class="form-check-input form-checkbox list-item-check" value= ${inputValue} type="checkbox"> 
+            ${newArray[newArray.length - 1]}
+            </label>`;
+            elList.appendChild(elItem);
+        }
     }
-    else {
-        newArray.push(inputValue);
-        elItem.innerHTML = `<label class="form-label mb-0 w-100 ">
-        <input class="form-check-input form-checkbox list-item-check" value= ${inputValue} type="checkbox"> 
-        ${newArray[newArray.length - 1]}
-        </label>`;
-        elList.appendChild(elItem);
-    }
-    
+   
     let elListItemCheck = elList.querySelectorAll(".list-item-check");
 
     for(let itemCheckValue of elListItemCheck) {
